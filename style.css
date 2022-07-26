@@ -21,3 +21,89 @@
     font-family: 'ROKAFSansMedium';
     color: var(--yellow-color);
 }
+html {
+    background-color: var(--black-color);
+}
+
+
+#main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-title {
+    width: 1080px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -12px 12px 8px rgba(247, 223, 30, 0.25);
+}
+.main-title h1 {
+    font-family: 'ROKAFSansBold';
+    font-size: 64px;
+}
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 8px 8px rgba(247, 225, 30, 0.25);
+}
+
+
+.who-am-i {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section1-contents {
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h2 {
+    font-family: 'ROKAFSansBold';
+    font-size: 64px;
+}
+.introduce {
+    width: 1080px;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.introduce h4 {
+    font-family: 'ROKAFSansBold';
+    font-size: 40px;
+    padding-bottom: 56px;
+}
+.introduce p {
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+.introduce-tag {
+    width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+}
+.tag-box {
+    width: 164px;
+    height: 40px;
+    border: 2px solid var(--yellow-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tag-box>p {
+    font-size: 20px;
+}
