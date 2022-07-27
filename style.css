@@ -20,6 +20,8 @@
     padding: 0;
     font-family: 'ROKAFSansMedium';
     color: var(--yellow-color);
+    text-decoration: none;
+    list-style: none;
 }
 html {
     background-color: var(--black-color);
@@ -41,12 +43,60 @@ html {
     justify-content: center;
     background-color: var(--black-color);
     box-shadow: -12px 12px 8px rgba(247, 223, 30, 0.25);
+    animation: title-ani 5s infinite;
 }
 .main-title h1 {
     font-family: 'ROKAFSansBold';
     font-size: 64px;
 }
+@keyframes title-ani {
+    from {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0.4;
+    }
+    12% {
+        opacity: 1;
+    }
+    14% {
+        opacity: 0.4;
+    }
+    16% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    52% {
+        opacity: 0.7;
+    }
+    54% {
+        opacity: 1;
+    }
+    56% {
+        opacity: 0.7;
+    }
+    58% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    82% {
+        opacity: 0.5;
+    }
+    84% {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     width: 100%;
@@ -54,6 +104,19 @@ html {
     background-color: var(--black-color);
     box-shadow: 0px 8px 8px rgba(247, 225, 30, 0.25);
     z-index: 100;
+}
+.nav-bar ul {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+.nav-bar ul li {
+    font-size: 20px;
+    transition: 0.2s;
+}
+.nav-bar ul li:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 
@@ -117,7 +180,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 320px;
+    padding-bottom: 300px;
 }
 .section2-contents {
     width: 1080px;
@@ -156,7 +219,8 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 320px;
+    padding-top: 20px;
+    padding-bottom: 300px;
 }
 .section3-contents {
     width: 1080px;
@@ -284,6 +348,28 @@ h2 {
         height: 100%;
     }
 }
+.my-work-resume {
+    display: flex;
+    justify-content: space-between;
+    width: 1080px;
+}
+.resume {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 530px;
+    height: 120px;
+    border-radius: 20px;
+    background-color: var(--yellow-color);
+    transition: 0.2s;
+}
+.resume p {
+    font-size: 32px;
+    color: var(--black-color);
+}
+.resume:hover {
+    opacity: 0.5;
+}
 
 
 .contact {
@@ -292,6 +378,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
 }
 .section4-contents {
     display: flex;
@@ -305,6 +392,11 @@ h2 {
 }
 .section4-contents P {
     font-size: 32px;
+    margin-bottom: 16px;
+}
+.section4-contents P a:hover {
+    opacity: 0.5;
+    transition: 0.2s;
 }
 .copyright {
     padding-bottom: 40px;
