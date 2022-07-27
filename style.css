@@ -39,6 +39,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--black-color);
     box-shadow: -12px 12px 8px rgba(247, 223, 30, 0.25);
 }
 .main-title h1 {
@@ -50,7 +51,9 @@ html {
     top: 0;
     width: 100%;
     height: 80px;
+    background-color: var(--black-color);
     box-shadow: 0px 8px 8px rgba(247, 225, 30, 0.25);
+    z-index: 100;
 }
 
 
@@ -106,4 +109,206 @@ h2 {
 }
 .tag-box>p {
     font-size: 20px;
+}
+
+
+.my-skills {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 320px;
+}
+.section2-contents {
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+.skills-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1080px;
+    margin-top: 80px;
+}
+.skills-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    box-shadow: -8px 8px 8px rgba(247, 223, 30, 0.25);
+}
+.skills-box p {
+    font-family: 'ROKAFSansBold';
+    color: var(--white-color);
+    font-size: 16px;
+}
+
+
+.my-works {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 320px;
+}
+.section3-contents {
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.work-box-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 520px);
+    grid-auto-rows: 300px;
+    grid-gap: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.work-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -8px 8px 8px rgba(247, 223, 30, 0.25);
+    position: relative;
+    padding: 16px;
+}
+.work-box p {
+    opacity: 0;
+    font-family: 'ROKAFSansBold';
+}
+.work-box a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+}
+.work-box>.works-title {
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+.work-box>.works-sub {
+    font-size: 16px;
+}
+.korea-taekwondo-associtaion {
+    background: url(images/kta_main.png);
+    background-size: 100% 100%;
+}
+.hyeon-sik {
+    background: url(images/hs_main.png);
+    background-size: 100% 100%;
+}
+.loading {
+    background: var(--black-color);
+}
+.loading figure {
+    transition: 1s;
+}
+.ready {
+    padding-top: 16px;
+}
+.border-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+}
+.border-container>div {
+    position: absolute;
+    background-color: var(--yellow-color);
+}
+.top {
+    top: 0;
+}
+.left {
+    left: 0;
+}
+.bottom {
+    bottom: 0;
+}
+.right {
+    right: 0;
+}
+.top.left, .bottom.right {
+    width: 0;
+    height: 2px;
+}
+.top.right, .bottom.left {
+    width: 2px;
+    height: 0;
+}
+.work-box:hover .top.left, .work-box:hover .bottom.right {
+    animation: grow-width 0.5s linear;
+    animation-fill-mode: both;
+}
+.work-box:hover .top.right, .work-box:hover .bottom.left {
+    animation: grow-height 0.5s linear;
+    animation-fill-mode: both;
+}
+.work-box:hover p {
+    opacity: 1;
+    transition: 1s;
+}
+.work-box:hover figure {
+    transform: rotate(720deg);
+}
+.work-box:hover {
+    background: var(--black-color);
+}
+@keyframes grow-width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes grow-height {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+
+.contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.section4-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 320px;
+}
+.contact-text {
+    margin-top: 80px;
+}
+.section4-contents P {
+    font-size: 32px;
+}
+.copyright {
+    padding-bottom: 40px;
+}
+.copyright p {
+    font-size: 24px;
 }
