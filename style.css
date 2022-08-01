@@ -472,6 +472,18 @@ h2 {
 }
 
 
+.go-to-main {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    transition: 0.2s;
+}
+.go-to-main:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
 /* ------------------------- fade-in -------------------------*/
 section {
     transform: translateY(100px);

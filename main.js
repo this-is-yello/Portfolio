@@ -1,6 +1,7 @@
 header();
 fadeIn();
 copyToClipboard();
+goToMain();
 
 function header() {
   const sections = document.getElementsByTagName("section");
@@ -41,5 +42,15 @@ function copyToClipboard() {
     setTimeout(() => {
       eMailCopy.classList.remove("complete-copy");
     }, 3000)
+  });
+}
+
+
+function goToMain() {
+  const goToMainBtn = document.querySelector(".go-to-main");
+  const main = document.getElementById("main");
+  
+  goToMainBtn.addEventListener("click", () => {
+    window.scrollTo({top: main.offsetTop, behavior: "smooth"});
   });
 }
