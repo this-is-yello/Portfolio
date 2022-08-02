@@ -31,18 +31,23 @@ html {
 /* ------------------------- main -------------------------*/
 #main {
     width: 100%;
-    height: 100vh;
+    height: 240vh;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 .main-title {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) scale(100%);
     width: 1080px;
     height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--black-color);
+    transition: 0.5s;
+}
+.main-title-shadow {
     box-shadow: -12px 12px 8px rgba(247, 223, 30, 0.25);
 }
 .main-title h1 {
@@ -474,7 +479,7 @@ h2 {
 
 .go-to-main {
     position: fixed;
-    bottom: 80px;
+    bottom: 40px;
     right: 40px;
     transition: 0.2s;
 }

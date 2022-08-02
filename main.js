@@ -54,3 +54,33 @@ function goToMain() {
     window.scrollTo({top: main.offsetTop, behavior: "smooth"});
   });
 }
+
+const main = document.getElementById("main");
+const mainTitle = document.querySelector(".main-title");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    mainTitle.classList.add("main-title-shadow");
+  } else {
+    mainTitle.classList.remove("main-title-shadow");
+  }
+  console.log(window.scrollY);
+  console.log(main.clientHeight);
+
+  const mainTitleAnimation = setInterval(() => {
+    console.log('ㅎ')
+  if(window.scrollY>=400){
+    mainTitle.style.transform = `translateY(-50%) scale(${(window.scrollY-300)/100})`
+    mainTitle.style.opacity = `${(1-window.scrollY/(main.clientHeight-window.innerHeight))}` 
+  }else {
+    mainTitle.style.transform = `translateY(-50%) scale(1)`
+  }
+  }, 50);
+
+  if (window.scrollY >= main.clientHeight) {
+    clearInterval(mainTitleAnimation);
+  } else {
+    setInterval(mainTitleAnimation);
+  }
+});
+
