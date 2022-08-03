@@ -2,6 +2,7 @@ header();
 fadeIn();
 copyToClipboard();
 goToMain();
+mainTitle();
 
 function header() {
   const sections = document.getElementsByTagName("section");
@@ -53,34 +54,61 @@ function goToMain() {
   goToMainBtn.addEventListener("click", () => {
     window.scrollTo({top: main.offsetTop, behavior: "smooth"});
   });
+
+  const navBar = document.querySelector(".nav-bar");
+
+  // if (window.scrollY < navBar.offsetTop) {
+  //   goToMainBtn.style.opacity = 0;
+  // } else {
+  //   goToMainBtn.style.opacity = 1;
+  // }
 }
 
-const main = document.getElementById("main");
-const mainTitle = document.querySelector(".main-title");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    mainTitle.classList.add("main-title-shadow");
-  } else {
-    mainTitle.classList.remove("main-title-shadow");
+function mainTitle() {
+  const main = document.getElementById("main");
+  const mainTitle = document.querySelector(".main-title");
+
+  let playIntreval = true;
+  let mainTitleAnimation;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      mainTitle.classList.add("main-title-shadow");
+    } else {
+      mainTitle.classList.remove("main-title-shadow");
+    }
+    
+    // console.log(`${window.scrollY} , ${main.clientHeight}`)
+    if (window.scrollY > main.clientHeight) {
+      // console.log('clearInterval');
+      clearInterval(mainTitleAnimation);
+      playIntreval=true;
+    } 
+    else if(playIntreval) {
+      mainTitleSetInterval();
+      playIntreval=false;
+    }
+  });
+
+  function mainTitleSetInterval() {
+    mainTitleAnimation = setInterval(() => {
+      // console.log('setInterval');
+      if(window.scrollY>=400){
+        mainTitle.style.transform = `translateY(-50%) scale(${(window.scrollY-300)/100})`;
+        mainTitle.style.opacity = `${(1-window.scrollY/(main.clientHeight-window.innerHeight))}`;
+      }else {
+        mainTitle.style.transform = `translateY(-50%) scale(1)`;
+        mainTitle.style.opacity = 1;
+      }
+    }, 50);
   }
-  console.log(window.scrollY);
-  console.log(main.clientHeight);
-
-  const mainTitleAnimation = setInterval(() => {
-    console.log('ㅎ')
-  if(window.scrollY>=400){
-    mainTitle.style.transform = `translateY(-50%) scale(${(window.scrollY-300)/100})`
-    mainTitle.style.opacity = `${(1-window.scrollY/(main.clientHeight-window.innerHeight))}` 
-  }else {
-    mainTitle.style.transform = `translateY(-50%) scale(1)`
-  }
-  }, 50);
-
-  if (window.scrollY >= main.clientHeight) {
-    clearInterval(mainTitleAnimation);
-  } else {
-    setInterval(mainTitleAnimation);
-  }
-});
-
+  setTimeout(() => {
+    if (window.scrollY >= main.clientHeight) {
+      mainTitle.style.opacity = 0;
+    }
+    else {
+      mainTitle.style.opacity = 1;
+    }
+  }, 50)
+}
