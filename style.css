@@ -28,6 +28,15 @@ html {
 }
 
 
+.background {
+    position: fixed;
+    top: 0;
+    background-image: #ff0000;
+    width: 100%;
+    height: 100vh;
+}
+
+
 /* ------------------------- main -------------------------*/
 #main {
     width: 100%;
@@ -53,9 +62,9 @@ html {
 .main-title h1 {
     font-family: 'ROKAFSansBold';
     font-size: 64px;
-    animation: title-ani 5s infinite;
+    animation: title-animation 5s infinite;
 }
-@keyframes title-ani {
+@keyframes title-animation {
     from {
         opacity: 1;
     }
@@ -99,6 +108,66 @@ html {
         opacity: 1;
     }
 }
+.mouse-move {
+    transition: 0.2s;
+}
+.scroll-down {
+    position: fixed;
+    top: 80%;
+    display: flex;
+    justify-content: center;
+    width: 16px;
+    height: 32px;
+    border: 2px solid var(--yellow-color);
+    border-radius: 20px;
+    animation: scroll-down-animation 2s infinite;
+}
+@keyframes scroll-down-animation {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+}
+.mouse-wheel {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: var(--yellow-color);
+    animation: mouse-wheel-animation 2s infinite;
+}
+@keyframes mouse-wheel-animation {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(16px);
+        opacity: 0;
+    }
+}
+
+
+/* ------------------------- nav-bar -------------------------*/
 .nav-bar {
     display: flex;
     align-items: center;
@@ -456,7 +525,7 @@ h2 {
     color: var(--black-color);
 }
 .complete-copy {
-    animation: copy-complete 3s;
+    animation: copy-complete 2.5s;
 }
 @keyframes copy-complete {
     from {
@@ -481,11 +550,12 @@ h2 {
     position: fixed;
     bottom: 40px;
     right: 40px;
+    opacity: 0;
     transition: 0.2s;
 }
 .go-to-main:hover {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.5 !important;
 }
 
 

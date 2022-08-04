@@ -57,11 +57,13 @@ function goToMain() {
 
   const navBar = document.querySelector(".nav-bar");
 
-  // if (window.scrollY < navBar.offsetTop) {
-  //   goToMainBtn.style.opacity = 0;
-  // } else {
-  //   goToMainBtn.style.opacity = 1;
-  // }
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < navBar.clientHeight) {
+      goToMainBtn.style.opacity = 0;
+    } else {
+      goToMainBtn.style.opacity = 1;
+    }
+  });
 }
 
 
@@ -112,3 +114,14 @@ function mainTitle() {
     }
   }, 50)
 }
+
+
+const mouseMove = document.querySelector(".mouse-move");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY == 0) {
+    mouseMove.style.opacity = 1;
+  } else {
+    mouseMove.style.opacity = 0;
+  }
+});
