@@ -24,7 +24,7 @@ function fadeIn() {
   
   for (let i = 0; i < sections.length; i++) {
     window.addEventListener("scroll", () => {
-      if (sections[i].getBoundingClientRect().top - (window.innerHeight/2*1) < 0) {
+      if (sections[i].getBoundingClientRect().top - (window.innerHeight/(2*1)) < 0) {
         sections[i].classList.add("fade-in");
       }
     });

@@ -31,9 +31,50 @@ html {
 .background {
     position: fixed;
     top: 0;
-    background-image: #ff0000;
-    width: 100%;
+    left: 0;
+    display: flex;
+    width: 200vw;
     height: 100vh;
+}
+.background .city {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: 100vw 100vh;
+}
+.city-1 {
+    animation: to-left-1 50s infinite linear;
+}
+.city-2 {
+    animation: to-left-2 100s infinite linear;
+}
+@keyframes to-left-1 {
+    from {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    50.01% {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes to-left-2 {
+    from {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    50.01% {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
 }
 
 
@@ -57,6 +98,7 @@ html {
     opacity: 0;
 }
 .main-title-shadow {
+    background-color: var(--black-color);
     box-shadow: -12px 12px 8px rgba(247, 223, 30, 0.25);
 }
 .main-title h1 {
@@ -65,55 +107,27 @@ html {
     animation: title-animation 5s infinite;
 }
 @keyframes title-animation {
-    from {
-        opacity: 1;
-    }
-    10% {
-        opacity: 0.4;
-    }
-    12% {
-        opacity: 1;
-    }
-    14% {
-        opacity: 0.4;
-    }
-    16% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 1;
-    }
-    52% {
-        opacity: 0.7;
-    }
-    54% {
-        opacity: 1;
-    }
-    56% {
-        opacity: 0.7;
-    }
-    58% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 1;
-    }
-    82% {
-        opacity: 0.5;
-    }
-    84% {
-        opacity: 1;
-    }
-    to {
-        opacity: 1;
-    }
+    from {opacity: 1;}
+    10% {opacity: 0.4;}
+    12% {opacity: 1;}
+    14% {opacity: 0.4;}
+    16% {opacity: 1;}
+    50% {opacity: 1;}
+    52% {opacity: 0.7;}
+    54% {opacity: 1;}
+    56% {opacity: 0.7;}
+    58% {opacity: 1;}
+    80% {opacity: 1;}
+    82% {opacity: 0.5;}
+    84% {opacity: 1;}
+    to {opacity: 1;}
 }
 .mouse-move {
     transition: 0.2s;
 }
 .scroll-down {
     position: fixed;
-    top: 80%;
+    top: 90%;
     display: flex;
     justify-content: center;
     width: 16px;
@@ -311,6 +325,7 @@ h2 {
     width: 120px;
     height: 120px;
     border-radius: 16px;
+    background-color: var(--black-color);
     box-shadow: -8px 8px 8px rgba(247, 223, 30, 0.25);
 }
 .skills-box p {
