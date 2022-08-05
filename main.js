@@ -70,6 +70,7 @@ function goToMain() {
 function mainTitle() {
   const main = document.getElementById("main");
   const mainTitle = document.querySelector(".main-title");
+  const background = document.querySelector(".background");
 
   let playIntreval = true;
   let mainTitleAnimation;
@@ -91,17 +92,28 @@ function mainTitle() {
       mainTitleSetInterval();
       playIntreval=false;
     }
+
+    
+    if (window.scrollY > window.innerHeight*2) {
+      background.style.filter = "blur(8px) brightness(0.6)";
+    } 
+    if (window.scrollY<=window.innerHeight) {
+      background.style.filter = "";
+    }
   });
 
   function mainTitleSetInterval() {
     mainTitleAnimation = setInterval(() => {
       // console.log('setInterval');
-      if(window.scrollY>=400){
-        mainTitle.style.transform = `translateY(-50%) scale(${(window.scrollY-300)/100})`;
+      if(window.scrollY>=window.innerHeight*2){
         mainTitle.style.opacity = `${(1-window.scrollY/(main.clientHeight-window.innerHeight))}`;
       }else {
-        mainTitle.style.transform = `translateY(-50%) scale(1)`;
         mainTitle.style.opacity = 1;
+      }
+      if(window.scrollY>=400){
+        mainTitle.style.transform = `translateY(-50%) scale(${(window.scrollY-300)/100})`;
+      }else {
+        mainTitle.style.transform = `translateY(-50%) scale(1)`;
       }
     }, 50);
   }
