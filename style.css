@@ -44,7 +44,7 @@ html {
     background-size: 1920px 100vh;
 }
 .city-1 {
-    animation: to-left-1 10s infinite linear;
+    animation: to-left-1 15s infinite linear;
 }
 /* .city-2 {
     animation: to-left-2 100s infinite linear;
