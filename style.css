@@ -383,6 +383,9 @@ h2 {
     background: var(--black-color);
 }
 .loading figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: 1s;
 }
 .ready {
@@ -636,7 +639,7 @@ section {
 
 
     .section2-contents {
-        width: 100%;
+        width: 760px;
         padding: 0 32px;
         padding-top: 80px;
         padding-bottom: 140px;
@@ -668,12 +671,12 @@ section {
 
 
     .section3-contents {
-        width: 100%;
+        width: 760px;
         padding: 0 32px;
     }
     .work-box-grid {
-        grid-template-columns: repeat(2, 400px);
-        grid-auto-rows: 220px;
+        grid-template-columns: repeat(2, 370px);
+        grid-auto-rows: 200px;
         grid-gap: 20px;
     }
     .work-box p {
@@ -687,31 +690,33 @@ section {
     .work-box>.works-sub {
         font-size: 12px;
     }
-    .loading figure {
-        transition: 1s;
-    }
     .ready {
         padding-top: 16px;
     }
+    .loading img {
+        width: 70%;
+    }
     .my-work-resume {
-        padding: 0 32px;
         width: 100%;
     }
     .resume {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 530px;
-        height: 120px;
-        border-radius: 20px;
-        background-color: var(--yellow-color);
-        transition: 0.2s;
+        width: 370px;
+        height: 80px;
     }
     .resume p {
-        font-size: 32px;
+        font-size: 20px;
         color: var(--black-color);
     }
-    .resume:hover {
-        opacity: 0.5;
+
+
+    .section4-contents {
+        width: 760px;
+        padding-bottom: 280px;
+    }
+    .contact-text P {
+        font-size: 26px;
+    }
+    .copyright p {
+        font-size: 16px;
     }
 }
