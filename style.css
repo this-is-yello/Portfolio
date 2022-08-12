@@ -238,9 +238,9 @@ h2 {
     align-items: center;
     justify-content: space-between;
 }
-.introduce-text {
+/* .introduce-text {
     width: 100%;
-}
+} */
 .introduce h4 {
     font-family: 'ROKAFSansBold';
     font-size: 40px;
@@ -572,7 +572,7 @@ section {
 }
 
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1200px) {
     .main-title {
         width: 760px;
         height: 120px;
@@ -629,6 +629,163 @@ section {
     }
     .tag-box {
         width: 120px;
+        height: 30px;
+        border: 2px solid var(--yellow-color);
+        border-radius: 8px;
+    }
+    .tag-box>p {
+        font-size: 14px;
+    }
+
+
+    .section2-contents {
+        width: 760px;
+        padding: 0 32px;
+        padding-top: 80px;
+        padding-bottom: 140px;
+    }
+    .skills-icons {
+        width: 100%;
+        flex-wrap: wrap;
+        column-gap: 32px;
+        row-gap: 32px;
+    }
+    .skills-box {
+        width: 100px;
+        height: 100px;
+        border-radius: 16px;
+        background-color: var(--black-color);
+        box-shadow: -8px 8px 8px rgba(247, 223, 30, 0.25);
+    }
+    .skills-box figure {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    .skills-box img {
+        width: 70%;
+    }
+    .skills-box p {
+        font-size: 12px;
+    }
+
+
+    .section3-contents {
+        width: 760px;
+        padding: 0 32px;
+    }
+    .work-box-grid {
+        grid-template-columns: repeat(2, 370px);
+        grid-auto-rows: 200px;
+        grid-gap: 20px;
+    }
+    .work-box p {
+        opacity: 0;
+        font-family: 'ROKAFSansBold';
+    }
+    .work-box>.works-title {
+        font-size: 16px;
+        padding-bottom: 8px;
+    }
+    .work-box>.works-sub {
+        font-size: 12px;
+    }
+    .ready {
+        padding-top: 16px;
+    }
+    .loading img {
+        width: 70%;
+    }
+    .my-work-resume {
+        width: 100%;
+    }
+    .resume {
+        width: 370px;
+        height: 80px;
+    }
+    .resume p {
+        font-size: 20px;
+        color: var(--black-color);
+    }
+
+
+    .section4-contents {
+        width: 760px;
+        padding-bottom: 280px;
+    }
+    .contact-text P {
+        font-size: 26px;
+    }
+    .copyright p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-title {
+        width: 400px;
+        height: 80px;
+    }
+    .main-title h1 {
+        font-size: 24px;
+    }
+
+
+    .nav-bar-contents {
+        width: 760px;
+    }
+    .moon-box {
+        margin-top: 70px;
+        width: 150px;
+        height: 150px;
+        border-bottom-left-radius: 75px;
+        border-bottom-right-radius: 75px;
+    }
+    .moon-box img {
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    .nav-bar ul li {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+
+
+    .section1-contents {
+        width: 400px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    .introduce {
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 400px;
+        padding-top: 64px;
+    }
+    .introduce-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .introduce h4 {
+        font-size: 20px;
+        padding-bottom: 48px;
+    }
+    .introduce p {
+        font-size: 13px;
+        margin-bottom: 32px;
+    }
+    .introduce-photo img {
+        width: 60%;
+        padding-bottom: 40px;
+    }
+    .introduce-tag {
+        width: 400px;
+        padding-top: 24px;
+    }
+    .tag-box {
+        width: 180px;
         height: 30px;
         border: 2px solid var(--yellow-color);
         border-radius: 8px;
