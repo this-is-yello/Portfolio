@@ -29,11 +29,12 @@ html {
 }
 
 
-/*.background {
+.background {
     position: fixed;
     top: 0;
     display: flex;
     height: 100vh;
+    z-index: -1;
 }
 .background .city {
     width: 3840px;
@@ -50,7 +51,7 @@ html {
     to {
         transform: translateX(-50%);
     }
-}*/
+}
 
 
 .nav-bar {
@@ -92,21 +93,21 @@ html {
 
 #main {
     width: 100%;
-    height: 100vh;
+    height: 300vh;
     display: flex;
     justify-content: center;
 }
 .main-title {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    transform: translateY(-50%) scale(100%);
+    transform: translateY(-50%) scale(1);
+    width: 320px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 40px);
-    height: 80px;
     transition: 0.5s;
-    /* opacity: 0; */
+    opacity: 0;
 }
 .main-title-shadow {
     background-color: var(--black-color);
@@ -201,7 +202,7 @@ section {
     justify-content: center;
 }
 .section1-contents {
-    width: 100%;
+    width: 320px;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -223,12 +224,12 @@ h3 {
 .introduce h4 {
     font-family: 'ROKAFSansBold';
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     padding-bottom: 40px;
 }
 .introduce p {
     text-align: justify;
-    font-size: 16px;
+    font-size: 14px;
     padding-bottom: 40px;
 }
 .introduce-photo {
@@ -254,7 +255,7 @@ h3 {
     justify-content: center;
 }
 .section2-contents {
-    width: 100%;
+    width: 320px;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -263,9 +264,9 @@ h3 {
 }
 .skills-icons {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-auto-rows: 100px;
-    grid-row-gap: 40px;
+    grid-template-columns: repeat(3, 96px);
+    grid-auto-rows: 96px;
+    grid-row-gap: 12px;
     width: 100%;
     justify-content: space-between;
     margin-top: 40px;
@@ -275,14 +276,23 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 16px;
+    border-radius: 12px;
     background-color: var(--black-color);
     box-shadow: var(--yellow-shadow);
+}
+.skills-box figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.skills-box img {
+    width: 80%;
 }
 .skills-box p {
     font-family: 'ROKAFSansBold';
     color: var(--white-color);
-    font-size: 16px;
+    font-size: 12px;
 }
 
 
@@ -293,7 +303,7 @@ h3 {
     justify-content: center;
 }
 .section3-contents {
-    width: 100%;
+    width: 320px;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -302,9 +312,9 @@ h3 {
 }
 .work-box-grid {
     display: grid;
-    grid-template-columns: repeat(1, 100%);
+    grid-template-columns: repeat(1, 320px);
     grid-auto-rows: 180px;
-    grid-gap: 40px;
+    grid-gap: 32px;
     width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -331,11 +341,11 @@ h3 {
     z-index: 99;
 }
 .work-box>.works-title {
-    font-size: 20px;
+    font-size: 16px;
     padding-bottom: 8px;
 }
 .work-box>.works-sub {
-    font-size: 16px;
+    font-size: 14px;
 }
 .korea-taekwondo-associtaion {
     background: url(images/kta_main.png);
@@ -434,12 +444,12 @@ h3 {
     justify-content: center;
     width: 48%;
     height: 60px;
-    border-radius: 16px;
+    border-radius: 12px;
     background-color: var(--yellow-color);
     transition: 0.2s;
 }
 .resume p {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--black-color);
 }
 .resume:hover {
@@ -455,11 +465,12 @@ h3 {
     justify-content: center;
 }
 .section4-contents {
-    width: 100%;
+    width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 120px;
 }
 .contact-text {
     padding-top: 40px;
@@ -477,11 +488,12 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
     width: 240px;
     height: 56px;
     border-radius: 10px;
     background-color: var(--yellow-color);
-    margin-bottom: 80px;
+    /* opacity: 0; */
 }
 .mail-copy p {
     color: var(--black-color);
@@ -516,4 +528,15 @@ h3 {
 .go-to-main:hover {
     cursor: pointer;
     opacity: 0.5 !important;
+}
+
+
+section {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+.fade-in {
+    transform: translateY(0);
+    opacity: 1;
 }
