@@ -29,6 +29,7 @@ html {
 }
 
 
+/* ------------------------- background -------------------------*/
 .background {
     position: fixed;
     top: 0;
@@ -54,6 +55,7 @@ html {
 }
 
 
+/* ------------------------- nav-bar -------------------------*/
 .nav-bar {
     display: flex;
     align-items: center;
@@ -69,7 +71,8 @@ html {
 .nav-bar-contents {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    width: 320px;
 }
 .logo {
     display: flex;
@@ -80,10 +83,11 @@ html {
     font-size: 16px;
 }
 .nav-bar-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     display: none;
+    align-items: center;
+}
+.nav-bar-menu li {
+    margin-left: 20px;
 }
 .nav-bar-menu li:hover {
     cursor: pointer;
@@ -91,6 +95,7 @@ html {
 }
 
 
+/* ------------------------- main -------------------------*/
 #main {
     width: 100%;
     height: 300vh;
@@ -192,9 +197,22 @@ html {
     }
 }
 
+
+
+/* ------------------------- fade-in -------------------------*/
 section {
-    padding: 40px 0;
+    padding: 80px 0;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
 }
+.fade-in {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* ------------------------- who-am-i -------------------------*/
 .who-am-i {
     width: 100%;
     display: flex;
@@ -248,6 +266,7 @@ h3 {
 }
 
 
+/* ------------------------- my-skills -------------------------*/
 .my-skills {
     width: 100%;
     display: flex;
@@ -296,6 +315,7 @@ h3 {
 }
 
 
+/* ------------------------- my-works -------------------------*/
 .my-works {
     width: 100%;
     display: flex;
@@ -341,11 +361,11 @@ h3 {
     z-index: 99;
 }
 .work-box>.works-title {
-    font-size: 16px;
+    font-size: 14px;
     padding-bottom: 8px;
 }
 .work-box>.works-sub {
-    font-size: 14px;
+    font-size: 12px;
 }
 .korea-taekwondo-associtaion {
     background: url(images/kta_main.png);
@@ -364,8 +384,11 @@ h3 {
     align-items: center;
     transition: 1s;
 }
+.loading img {
+    width: 70%;
+}
 .ready {
-    padding-top: 16px;
+    padding-top: 14px;
 }
 .border-container {
     position: absolute;
@@ -457,6 +480,7 @@ h3 {
 }
 
 
+/* ------------------------- contact -------------------------*/
 .contact {
     width: 100%;
     display: flex;
@@ -465,7 +489,7 @@ h3 {
     justify-content: center;
 }
 .section4-contents {
-    width: 320px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -479,7 +503,7 @@ h3 {
     font-size: 20px;
     margin-bottom: 16px;
 }
-.contact-text .e-mail:hover {
+.contact-text span:hover {
     cursor: pointer;
     opacity: 0.5;
     transition: 0.2s;
@@ -517,6 +541,7 @@ h3 {
 }
 
 
+/* ------------------------- go-to-main -------------------------*/
 .go-to-main {
     display: none;
     position: fixed;
@@ -531,12 +556,77 @@ h3 {
 }
 
 
-section {
-    transform: translateY(100px);
-    opacity: 0;
-    transition: 1s;
-}
-.fade-in {
-    transform: translateY(0);
-    opacity: 1;
+@media screen and (min-width: 760px) {
+    .nav-bar-contents {
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .logo span {
+        font-size: 20px;
+    }
+    .nav-bar-menu {
+        display: flex;
+    }
+
+
+    .main-title {
+        width: 560px;
+    }
+    .main-title h2 {
+        font-size: 32px;
+    }
+
+
+    .section1-contents {
+        width: 560px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    .introduce h4 {
+        font-size: 20px;
+    }
+    .introduce p {
+        font-size: 16px;
+    }
+    .introduce-tag {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .introduce-tag p {
+        font-size: 14px;
+    }
+
+
+    .section2-contents {
+        width: 560px;
+    }
+    .skills-icons {
+        grid-template-columns: repeat(3, 120px);
+        grid-auto-rows: 120px;
+        grid-row-gap: 40px;
+    }
+    .skills-box img {
+        width: 100%;
+    }
+    .skills-box p {
+        font-size: 16px;
+    }
+
+
+    .section3-contents {
+        width: 560px;
+    }
+    .work-box-grid {
+        grid-template-columns: repeat(2, 260px);
+        grid-auto-rows: 160px;
+        grid-gap: 40px;
+    }
+
+
+    .copyright p {
+        font-size: 16px;
+    }
 }
