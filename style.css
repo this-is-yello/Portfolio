@@ -1,97 +1,46 @@
-@font-face {
-    font-family: 'ROKAFSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ROKAFSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 :root {
     --white-color: #FFFFFF;
-    --black-color: #262626;
+    --black-color: #1e1e1e;
     --yellow-color: #F7E10E;
     --yellow-shadow: 0px 8px 8px rgba(247, 225, 30, 0.25);
 }
 * {
     margin: 0;
     padding: 0;
-    font-family: 'ROKAFSansMedium';
-    color: var(--yellow-color);
     text-decoration: none;
     list-style: none;
 }
-html {
-    background-color: var(--black-color);
-}
 
-
-/* ------------------------- background -------------------------*/
-.background {
-    position: fixed;
-    top: 0;
-    display: flex;
-    height: 100vh;
-    z-index: -1;
-}
-.background .city {
-    width: 3840px;
-    height: 100vh;
-    background-image: url(images/background.png);
-    background-repeat: repeat-x;
-    background-size: 1920px 100vh;
-    animation: to-left 15s infinite linear;
-}
-@keyframes to-left {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-
-/* ------------------------- nav-bar -------------------------*/
-.nav-bar {
+/* ------------------------- header -------------------------*/
+header {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 8%;
-    background-color: var(--black-color);
-    box-shadow: var(--yellow-shadow);
+    height: 80px;
     z-index: 100;
 }
-.nav-bar-contents {
+header > .header-contents {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 320px;
-    padding: 0 20px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
 }
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header > .header-contents > h1 {
+    font-size: 56px;
 }
-.logo span {
-    font-size: 16px;
-}
-.nav-bar-menu {
+header > .header-contents > .menu {
     display: none;
     align-items: center;
 }
-.nav-bar-menu li {
+header > .header-contents > .menu > li {
     font-size: 14px;
     margin-left: 20px;
 }
-.nav-bar-menu li:hover {
+header > .header-contents > .menu > li:hover {
     cursor: pointer;
     opacity: 0.5;
 }
